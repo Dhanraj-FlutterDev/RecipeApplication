@@ -1,6 +1,7 @@
 package com.example.recipe;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -16,8 +17,8 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyHolder> {
 
-    private Context mContext;
-    private List<Recipes> mData;
+    private final Context mContext;
+    private final List<Recipes> mData;
 
     public RecyclerViewAdapter(Context mContext, List<Recipes> mData){
         this.mContext = mContext;
@@ -37,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyHolder myHolder, final int i) {
+    public void onBindViewHolder(@NonNull final MyHolder myHolder, @SuppressLint("RecyclerView") final int i) {
 
         myHolder.recipeTitle.setText(mData.get(i).getRecipeName());
         myHolder.img_recipe_thumbnail.setImageResource(mData.get(i).getThumbnail());
@@ -62,7 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mData.size();
     }
 
-    public class MyHolder extends RecyclerView.ViewHolder {
+    public static class MyHolder extends RecyclerView.ViewHolder {
 
         TextView recipeTitle;
         CardView cardView;

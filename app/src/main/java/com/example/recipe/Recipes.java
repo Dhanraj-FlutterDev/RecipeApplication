@@ -2,15 +2,14 @@ package com.example.recipe;
 
 public class Recipes {
 
-    private String RecipeName;
-    private String RecipeIngredients;
-    private String RecipeMethodTitle;
-    private String Recipe;
-    private int Thumbnail;
+    private final String RecipeName;
+    private final String RecipeIngredients;
+    private final String RecipeMethodTitle;
+    private final String Recipe;
+    private final int Thumbnail;
 
 
     public Recipes(String name, String recipeIngredients, String recipeMethodTitle,String recipe, int thumbnail){
-
         RecipeName = name;
         RecipeIngredients = recipeIngredients;
         RecipeMethodTitle = recipeMethodTitle;
@@ -21,7 +20,6 @@ public class Recipes {
 
 
     public  String getRecipeName(){
-
         return RecipeName;
     }
     public String getRecipeIngredients(){
